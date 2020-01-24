@@ -1,5 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
+import { ResponsiveLine } from '@nivo/line'
 import {
   Badge,
   Button,
@@ -451,6 +452,279 @@ const mainChartOpts = {
     },
   },
 };
+
+const data = [
+  {
+    "id": "japan",
+    "color": "hsl(261, 70%, 50%)",
+    "data": [
+      {
+        "x": "plane",
+        "y": 284
+      },
+      {
+        "x": "helicopter",
+        "y": 168
+      },
+      {
+        "x": "boat",
+        "y": 208
+      },
+      {
+        "x": "train",
+        "y": 214
+      },
+      {
+        "x": "subway",
+        "y": 13
+      },
+      {
+        "x": "bus",
+        "y": 227
+      },
+      {
+        "x": "car",
+        "y": 47
+      },
+      {
+        "x": "moto",
+        "y": 95
+      },
+      {
+        "x": "bicycle",
+        "y": 186
+      },
+      {
+        "x": "horse",
+        "y": 233
+      },
+      {
+        "x": "skateboard",
+        "y": 13
+      },
+      {
+        "x": "others",
+        "y": 91
+      }
+    ]
+  },
+  {
+    "id": "france",
+    "color": "hsl(302, 70%, 50%)",
+    "data": [
+      {
+        "x": "plane",
+        "y": 204
+      },
+      {
+        "x": "helicopter",
+        "y": 209
+      },
+      {
+        "x": "boat",
+        "y": 242
+      },
+      {
+        "x": "train",
+        "y": 57
+      },
+      {
+        "x": "subway",
+        "y": 70
+      },
+      {
+        "x": "bus",
+        "y": 10
+      },
+      {
+        "x": "car",
+        "y": 289
+      },
+      {
+        "x": "moto",
+        "y": 233
+      },
+      {
+        "x": "bicycle",
+        "y": 115
+      },
+      {
+        "x": "horse",
+        "y": 61
+      },
+      {
+        "x": "skateboard",
+        "y": 216
+      },
+      {
+        "x": "others",
+        "y": 94
+      }
+    ]
+  },
+  {
+    "id": "us",
+    "color": "hsl(141, 70%, 50%)",
+    "data": [
+      {
+        "x": "plane",
+        "y": 262
+      },
+      {
+        "x": "helicopter",
+        "y": 29
+      },
+      {
+        "x": "boat",
+        "y": 74
+      },
+      {
+        "x": "train",
+        "y": 6
+      },
+      {
+        "x": "subway",
+        "y": 293
+      },
+      {
+        "x": "bus",
+        "y": 133
+      },
+      {
+        "x": "car",
+        "y": 83
+      },
+      {
+        "x": "moto",
+        "y": 256
+      },
+      {
+        "x": "bicycle",
+        "y": 197
+      },
+      {
+        "x": "horse",
+        "y": 286
+      },
+      {
+        "x": "skateboard",
+        "y": 77
+      },
+      {
+        "x": "others",
+        "y": 11
+      }
+    ]
+  },
+  {
+    "id": "germany",
+    "color": "hsl(100, 70%, 50%)",
+    "data": [
+      {
+        "x": "plane",
+        "y": 275
+      },
+      {
+        "x": "helicopter",
+        "y": 131
+      },
+      {
+        "x": "boat",
+        "y": 17
+      },
+      {
+        "x": "train",
+        "y": 220
+      },
+      {
+        "x": "subway",
+        "y": 51
+      },
+      {
+        "x": "bus",
+        "y": 281
+      },
+      {
+        "x": "car",
+        "y": 152
+      },
+      {
+        "x": "moto",
+        "y": 7
+      },
+      {
+        "x": "bicycle",
+        "y": 221
+      },
+      {
+        "x": "horse",
+        "y": 146
+      },
+      {
+        "x": "skateboard",
+        "y": 249
+      },
+      {
+        "x": "others",
+        "y": 111
+      }
+    ]
+  },
+  {
+    "id": "norway",
+    "color": "hsl(155, 70%, 50%)",
+    "data": [
+      {
+        "x": "plane",
+        "y": 71
+      },
+      {
+        "x": "helicopter",
+        "y": 111
+      },
+      {
+        "x": "boat",
+        "y": 101
+      },
+      {
+        "x": "train",
+        "y": 247
+      },
+      {
+        "x": "subway",
+        "y": 117
+      },
+      {
+        "x": "bus",
+        "y": 73
+      },
+      {
+        "x": "car",
+        "y": 133
+      },
+      {
+        "x": "moto",
+        "y": 157
+      },
+      {
+        "x": "bicycle",
+        "y": 237
+      },
+      {
+        "x": "horse",
+        "y": 247
+      },
+      {
+        "x": "skateboard",
+        "y": 212
+      },
+      {
+        "x": "others",
+        "y": 259
+      }
+    ]
+  }
+]
 
 class Dashboard extends Component {
   constructor(props) {
